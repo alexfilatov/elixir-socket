@@ -98,7 +98,7 @@ defmodule Socket.Host do
   @doc """
   Get the hostent by name and family, raising if an error occurs.
   """
-  @spec by_name!(binary | char_list, :inet.address_family) :: t | no_return
+  @spec by_name!(binary | charlist, :inet.address_family) :: t | no_return
   def by_name!(name, family) when name |> is_binary do
     case :inet.gethostbyname(String.to_charlist(name), family) do
       { :ok, host } ->
